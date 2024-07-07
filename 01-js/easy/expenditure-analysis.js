@@ -14,6 +14,10 @@
 */
 
 function calculateTotalSpentByCategory(transactions) {
+  let arr = 
+  for(let i=0; i<transactions.lentgh; i++){
+    if(transactions.category == "")
+  }
   return [];
 }
 
