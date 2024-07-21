@@ -14,13 +14,13 @@
 */
 
 function calculateTotalSpentByCategory(transactions) {
-  let final = [];
+  let output = [];
   let categoryFound;
   
-  indexes1 = transactions.length;
+  let indexes1 = transactions.length;
   for (let i = 0; i < indexes1; i++) {
     categoryFound = false;
-    indexes2 = output.length;
+    let indexes2 = output.length;
     for (let j = 0; j < indexes2; j++) {
       if (transactions[i]["category"] == output[j]["category"]) {
         output[j]["totalSpent"] +=  transactions[i]["price"];
@@ -36,7 +36,7 @@ function calculateTotalSpentByCategory(transactions) {
       })
     }
   }
-  return final;
+  return output;
 }
 
 console.log( calculateTotalSpentByCategory(

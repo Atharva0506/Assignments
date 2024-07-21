@@ -16,6 +16,57 @@
   Once you've implemented the logic, test your code by running
 */
 
-class Calculator {}
+class Calculator {
+  constructor(){
+    this.result = 0;
+  }
+  add(x) {
+    this.result = this.result + x;
+  }
+  subtract(x) {
+    this.result = this.result - x;
+  }
+  multiply(x) {
+    this.result = this.result * x;
+  }
+  divide(x) {
+    if(x == 0){
+      throw new Error()
+    }
+    this.result = this.result / x;
+  }
+  clear() {
+    this.result = 0;
+  }
+  getResult() {
+    return this.result;
+  }
+  calculate(x) {
+    let updatedExpression = "";
+    for (let i = 0; i < x.length; i++) {
+      if (x[i].match(/[a-z]/i)) {
+        throw new Error();
+      }
+      if (x[i] != " ") {
+        updatedExpression = updatedExpression + x[i];
+      }
+    }
+    if (updatedExpression.includes("/0")) {
+      throw new Error();
+    }
+    this.result = eval(x);
+  }
+}
+
+
+// let calculator = new Calculator()
+// calculator.add(10);
+// calculator.subtract(9);
+// calculator.multiply(10);
+// calculator.divide(10);
+// console.log(calculator.getResult());
+
+// console.log(calculator.calculate("12+10"))
+// console.log(calculator.calculate("12+abc"))
 
 module.exports = Calculator;
